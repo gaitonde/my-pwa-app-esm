@@ -44,6 +44,7 @@ export default function Home() {
       // Stop all video tracks
       stream.getTracks().forEach((track) => track.stop());
     } catch (err) {
+      console.error('Camera access denied or not available.', err);
       alert('Camera access denied or not available.');
     }
   };
