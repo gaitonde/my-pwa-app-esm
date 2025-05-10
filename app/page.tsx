@@ -2,6 +2,13 @@
 
 import React, { useState, useEffect } from 'react';
 
+// Add this at the top of your file (before imports)
+type BeforeInstallPromptEvent = Event & {
+  readonly platforms: string[];
+  readonly userChoice: Promise<{ outcome: 'accepted' | 'dismissed'; platform: string }>;
+  prompt(): Promise<void>;
+};
+
 export default function Home() {
   const [installPromptEvent, setInstallPromptEvent] = useState<BeforeInstallPromptEvent | null>(null);
   const [capturedImage, setCapturedImage] = useState<string | null>(null);
