@@ -33,7 +33,7 @@ export default function Home() {
     );
     // Detect if app is already installed
     setIsInStandaloneMode(
-      'standalone' in window.navigator && (window.navigator as any).standalone
+      'standalone' in window.navigator && Boolean((window.navigator as { standalone?: boolean }).standalone)
     );
   }, []);
 
