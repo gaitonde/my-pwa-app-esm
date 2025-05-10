@@ -1,6 +1,6 @@
 'use client'; // This component needs client-side interactivity
 
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 
 // Add this at the top of your file (before imports)
 type BeforeInstallPromptEvent = Event & {
