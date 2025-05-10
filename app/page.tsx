@@ -13,23 +13,34 @@ export default function Home() {
   const [installPromptEvent, setInstallPromptEvent] = useState<BeforeInstallPromptEvent | null>(null);
   const [capturedImage, setCapturedImage] = useState<string | null>(null);
 
-  useEffect(() => {
-    const handler = (e: BeforeInstallPromptEvent) => {
-      console.log('beforeinstallprompt fired');
-      // Prevent the mini-infobar from appearing on mobile
-      e.preventDefault();
-      // Stash the event so it can be triggered later.
-      setInstallPromptEvent(e);
-      console.log(`'beforeinstallprompt' event was fired.`);
-    };
+  // useEffect(() => {
+  //   const handler = (e: BeforeInstallPromptEvent) => {
+  //     console.log('beforeinstallprompt fired');
+  //     // Prevent the mini-infobar from appearing on mobile
+  //     e.preventDefault();
+  //     // Stash the event so it can be triggered later.
+  //     setInstallPromptEvent(e);
+  //     console.log(`'beforeinstallprompt' event was fired.`);
+  //   const handler = (e: BeforeInstallPromptEvent) => {
+  //     console.log('beforeinstallprompt fired');
+  //     // Prevent the mini-infobar from appearing on mobile
+  //     e.preventDefault();
+  //     // Stash the event so it can be triggered later.
+  //     setInstallPromptEvent(e);
+  //     console.log(`'beforeinstallprompt' event was fired.`);
+  //   };
 
-    window.addEventListener('beforeinstallprompt', handler);
+  //   window.addEventListener('beforeinstallprompt', (e) => {
+  //     handler(e as BeforeInstallPromptEvent);
+  //   });
 
-    return () => {
-      window.removeEventListener('beforeinstallprompt', handler);
-    };
-  }, []);
-
+  //   return () => {
+  //     window.removeEventListener('beforeinstallprompt', (e) => {
+  //       handler(e as BeforeInstallPromptEvent);
+  //     });
+  //   }
+  // })
+  
   const handleInstallClick = async () => {
     if (!installPromptEvent) {
       return;
