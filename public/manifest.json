@@ -1,6 +1,6 @@
 {
   "name": "Simple PWA ESM",
-  "short_name": "SimplePWAESM",
+  "short_name": "DA Chairs",
   "description": "A basic Progressive Web App built with Next.js (ESM) and TypeScript.",
   "start_url": "/",
   "display": "standalone",
